@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suche Resorts</title>
+</head>
+<body>
+    <h1>Suche nach Resorts</h1>
+    <form method="POST">
+        <input type="text" name="query" placeholder="Resort oder Ort eingeben">
+        <button type="submit">Suchen</button>
+    </form>
+    <h2>Suchergebnisse</h2>
+    {% if results %}
+        <ul>
+            {% for resort in results %}
+                <li>{{ resort.name }} - {{ resort.location }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Keine Ergebnisse gefunden.</p>
+    {% endif %}
+</body>
+</html>
